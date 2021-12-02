@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../main.dart';
 
@@ -13,7 +14,7 @@ class HotelCard extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       height: 230,
       decoration: BoxDecoration(
-        //color: Colors.blue,
+        color: Colors.white,
         borderRadius: const BorderRadius.all(Radius.circular(10)
         ),
         boxShadow: [
@@ -58,6 +59,60 @@ class HotelCard extends StatelessWidget {
                 )
               ],
             )
+         ),
+         Container(
+           margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             children: [
+           Text(hotelData['title'],
+           style: GoogleFonts.nunito(
+             fontSize: 10,
+             fontWeight: FontWeight.w800,
+           ),
+           ),
+          
+           Text( '\$' + hotelData['price'],
+           style: GoogleFonts.nunito(
+             fontSize: 18,
+             fontWeight: FontWeight.w800,
+           )
+           ),
+
+         ],
+         ),
+         ),
+         Container(
+           margin: const EdgeInsets.symmetric(horizontal: 10),
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            Text(
+              hotelData['place'],
+              style: GoogleFonts.nunito(
+              fontSize: 14,
+              color: Colors.grey[500],
+              fontWeight: FontWeight.w800,
+            ),
+            ),
+            Row(
+              children: [
+                const Icon(
+                  Icons.place,
+                  color: d_green,
+                  size: 14.0
+                ),
+                Text(hotelData['distance'].toString() + 'km to city',
+                style: GoogleFonts.nunito(
+                  fontSize: 14,
+                  color: Colors.grey[500],
+                  fontWeight: FontWeight.w400,
+                ),
+                )
+              ],
+            )
+            ]
+           )
          )
         ],
       ),
