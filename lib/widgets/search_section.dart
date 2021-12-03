@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotelsapp/main.dart';
+import 'package:hotelsapp/widgets/calendar_page.dart';
 
 
 class SearchSection extends StatelessWidget {
@@ -56,7 +57,11 @@ class SearchSection extends StatelessWidget {
                   ),
                 ),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return CalendarPage();
+                    } ));
+                  },
                   child: const Icon(
                     Icons.search,
                     size: 26,
