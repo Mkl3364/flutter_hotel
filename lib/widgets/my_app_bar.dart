@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hotelsapp/pages/map.dart';
 
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -34,7 +35,11 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: Colors.grey[800],
           size: 20,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const Map();
+            }));
+          },
         )
       ],
       centerTitle: true,
