@@ -4,6 +4,12 @@ import 'package:hotelsapp/widgets/period_section.dart';
 import 'package:hotelsapp/widgets/validate_booking_section.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+// const d_green = Color(0xFF54D3C2);
+
+DateTime kNow = DateTime.now();
+DateTime kFirstDay = DateTime(kNow.year, kNow.month - 3, kNow.day);
+DateTime kLastDay = DateTime(kNow.year, kNow.month + 3, kNow.day);
+
 class CalendarPage extends StatelessWidget {
 
   @override
@@ -26,7 +32,8 @@ class CalendarPage extends StatelessWidget {
 
 class MyCalendarAppBar extends StatelessWidget implements PreferredSizeWidget{
 
-  Size get preferredSize => new Size.fromHeight(60);
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -42,5 +49,6 @@ class MyCalendarAppBar extends StatelessWidget implements PreferredSizeWidget{
       ),
       backgroundColor: Colors.white,
     );
+    
   }
 }
